@@ -1,5 +1,11 @@
 /* Api methods to call /functions */
 
+
+const getCv = () => {
+  return fetch('/.netlify/functions/cv-all').then((response) => {
+    return response.json()
+  })
+}
 const create = (data) => {
   return fetch('/.netlify/functions/todos-create', {
     body: JSON.stringify(data),
