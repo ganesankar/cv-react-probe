@@ -63,8 +63,8 @@ export default class Experience extends Component {
             })}
         </Row>
         <Modal isOpen={this.state.toogleModal} toggle={this.closeModel}>
-          <ModalHeader toggle={this.closeModel}> {showmod.name}</ModalHeader>
-          <ModalBody>{showmod.desc} </ModalBody>
+          <ModalHeader toggle={this.closeModel}> {this.state.showmod.name}</ModalHeader>
+          <ModalBody>{this.state.showmod.desc} </ModalBody>
           <ModalFooter>
             <Button color="secondary" onClick={this.closeModel}>
               Close
