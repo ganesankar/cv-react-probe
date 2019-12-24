@@ -1,43 +1,35 @@
-import React from 'react'
-import deployButton from '../../assets/deploy-to-netlify.svg'
-import logo from '../../assets/logo.svg'
-import github from '../../assets/github.svg'
-import styles from './AppHeader.css' // eslint-disable-line
+import React , { useState } from 'react';
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink
+} from 'reactstrap';
 
 const AppHeader = (props) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggle = () => setIsOpen(!isOpen);
   return (
-    <header className='app-header'>
-      <div className='app-title-wrapper'>
-        <div className='app-title-wrapper'>
-          <div className='app-left-nav'>
-            <img src={logo} className='app-logo' alt='logo' />
-            <div className='app-title-text'>
-              <h1 className='app-title'>Netlify + Fauna DB</h1>
-              <p className='app-intro'>
-                Using FaunaDB & Netlify functions
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className='deploy-button-wrapper'>
-          <a
-            target='_blank'
-            rel='noopener noreferrer'
-            href='https://app.netlify.com/start/deploy?repository=https://github.com/netlify/netlify-faunadb-example&stack=fauna'>
-            <img src={deployButton} className='deploy-button' alt='deploy to netlify' />
-          </a>
-          <div className='view-src'>
-            <a
-              target='_blank'
-              rel='noopener noreferrer'
-              href='https://github.com/netlify/netlify-faunadb-example'>
-              <img className='github-icon' src={github} alt='view repo on github' />
-              View the source Luke
-            </a>
-          </div>
-        </div>
-      </div>
-    </header>
+    <div>
+      <Navbar color="light" light expand="md">
+        <NavbarBrand href="/">reactstrap</NavbarBrand>
+        <NavbarToggler onClick={toggle} />
+        <Collapse isOpen={isOpen} navbar>
+          <Nav className="mr-auto" navbar>
+            <NavItem>
+              <NavLink href="/components/">Components</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+            </NavItem>
+            
+          </Nav>
+        </Collapse>
+      </Navbar>
+    </div>
   )
 }
 
