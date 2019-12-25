@@ -62,16 +62,36 @@ export default class Experience extends Component {
                         {item.startdate === "c" ? "Present" : item.startdate} -{" "}
                         {item.enddate === "c" ? "Present" : item.enddate}
                       </span>
+                      {item.size && (
+                        <span class="badge badge-info">
+                          <i class="fas fa-users in-view"></i> {item.size}
+                        </span>
+                      )}
+                      {item.client && (
+                        <span class="badge badge-info">
+                          <i class="far fa-building in-view"></i> {item.client}
+                        </span>
+                      )}
                       <hr />
                       <CardText>{item.desc}</CardText>
                       <hr />
-                      <CardLink
-                        onClick={() => {
-                          this.openModel(item);
-                        }}
-                      >
-                        Read more
-                      </CardLink>
+
+                      {item.values && (
+                        <CardLink
+                          onClick={() => {
+                            this.openModel(item);
+                          }}
+                        >
+                          Read more
+                        </CardLink>
+                      )}
+                      {item.technology &&
+                        item.technology.length > 0 &&
+                        item.technology.map((item1, index) => {
+                          return (
+                            <span class="badge badge-info mr-1">{item1}</span>
+                          );
+                        })}
                     </CardBody>
                   </Card>
                 </Col>
