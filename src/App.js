@@ -1,10 +1,7 @@
 import React, { Component } from "react";
 import { Container, Row, Col } from "reactstrap";
-import AppHeader from "./components/AppHeader";
 import Section from "./components/Section";
-import SettingsIcon from "./components/SettingsIcon";
 import api from "./utils/api";
-import sortByDate from "./utils/sortByDate";
 import isLocalHost from "./utils/isLocalHost";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
@@ -12,7 +9,7 @@ import "./App.css";
 export default class App extends Component {
   state = {
     todos: [],
-    showMenu: false
+    loading: true
   };
   componentDidMount() {
     // Fetch all todos
@@ -38,7 +35,8 @@ export default class App extends Component {
       }
 
       this.setState({
-        todos: list
+        todos: list,
+        loading: false
       });
     });
   }
@@ -53,11 +51,17 @@ export default class App extends Component {
       showMenu: true
     });
   };
-  
+
   render() {
-    const { todos } = this.state;
+    const { todos, loading } = this.state;
+    todos.sort((a, b) => (a.id > b.id ? 1 : b.id > a.id ? -1 : 0));
     return (
       <div className="app">
+        {loading && (
+          <div className="c-preloader  js-preloader"><i class="fas fa-circle-notch fa-spin fas-spin"></i>
+            </div>
+        )}
+
         {todos &&
           todos.length > 0 &&
           todos.map((listItem, index) => {
@@ -67,21 +71,14 @@ export default class App extends Component {
               </React.Fragment>
             );
           })}
+        <Container fluid>
+          <Row>
+            <Col xs="12" sm="12" md="13" className="text-center">
+              &copy; Ganesan Karuppaiya
+            </Col>
+          </Row>
+        </Container>
       </div>
     );
   }
-}
-
-function removeOptimisticTodo(todos) {
-  // return all 'real' todos
-  return todos.filter(todo => {
-    return todo.ref;
-  });
-}
-
-function getTodoId(todo) {
-  if (!todo.ref) {
-    return null;
-  }
-  return todo.ref["@ref"].id;
 }

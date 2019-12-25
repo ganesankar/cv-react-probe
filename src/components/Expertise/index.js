@@ -1,40 +1,43 @@
-import React, { useState } from "react";
-import {
-  Col,
-  Container,
-  Row,
-  Badge,
-  Nav,
-  NavItem,
-  NavLink
-} from "reactstrap";
+import React from "react";
+import _ from "lodash";
+import { Col, Container, Row } from "reactstrap";
 
 const Expertise = props => {
   console.log("props.data", props.data);
-
+  const expresult = _.groupBy(props.data.values, "desc");
+  console.log("expresult", expresult);
   return (
     <Container fluid>
       <Row>
         {props.data &&
-          props.data.values.length > 0 &&
-          props.data.values.map((item, index) => {
+          Object.keys(expresult).map((key, value, index) => {
             return (
               <Col xs="12" sm="12" md="12">
-                <address>
-                  <strong> {item.name}</strong>
-                  <br />
-                  {item.desc}
-                  <br />
-                  {item.values &&
-                    item.values.length > 0 &&
-                    item.values.map((item1, index) => {
+                <strong> {key}</strong>
+                <br />
+                <ol>
+                  {expresult[key].length > 0 &&
+                    expresult[key].map((item, index) => {
                       return (
-                        <Badge href="#" color="primary">
-                          {item1}
-                        </Badge>
+                        <Col xs="12" sm="12" md="12">
+                          <li>
+                            <strong> {item.name}</strong>
+                            <p>
+                              {item.values &&
+                                item.values.length > 0 &&
+                                item.values.map((item1, index) => {
+                                  return (
+                                    <span class="badge badge-info mr-1">
+                                      {item1}
+                                    </span>
+                                  );
+                                })}
+                            </p>
+                          </li>
+                        </Col>
                       );
                     })}
-                </address>
+                </ol>
               </Col>
             );
           })}

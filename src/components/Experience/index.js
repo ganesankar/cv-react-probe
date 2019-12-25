@@ -1,20 +1,18 @@
-import React, { Component, useState } from "react";
+import React, { Component } from "react";
 
 import {
   Col,
   Container,
   Row,
   Card,
-  Button,
-  CardHeader,
-  CardFooter,
+  CardSubtitle,
+  CardLink,
   CardBody,
   CardTitle,
   CardText,
   Modal,
   ModalHeader,
-  ModalBody,
-  ModalFooter
+  ModalBody
 } from "reactstrap";
 export default class Experience extends Component {
   state = {
@@ -35,6 +33,7 @@ export default class Experience extends Component {
   render() {
     const { showMenu } = this.props;
     const showOrHide = showMenu ? "flex" : "none";
+
     return (
       <Container fluid>
         <Row>
@@ -44,32 +43,61 @@ export default class Experience extends Component {
               return (
                 <Col xs="12" sm="12" md="12">
                   <Card>
-                    <CardHeader>{item.name}</CardHeader>
                     <CardBody>
-                      <CardTitle>Special Title Treatment</CardTitle>
+                      <CardTitle>{item.name}</CardTitle>
+                      <CardSubtitle className="text-info">
+                        <a
+                          rel="noopener noreferrer"
+                          href={item.link}
+                          target="_blank"
+                          className="text-info"
+                        >
+                          <i className="fas fa-briefcase in-view"></i>{" "}
+                          {item.company}{" "}
+                        </a>
+                        <i className="fas fa-map-marked in-view"></i>{" "}
+                        {item.location}{" "}
+                      </CardSubtitle>
+                      <span class="badge badge-secondary">
+                        {item.startdate === "c" ? "Present" : item.startdate} -{" "}
+                        {item.enddate === "c" ? "Present" : item.enddate}
+                      </span>
+                      <hr />
                       <CardText>{item.desc}</CardText>
-                      <Button
+                      <hr />
+                      <CardLink
                         onClick={() => {
                           this.openModel(item);
                         }}
                       >
                         Read more
-                      </Button>
+                      </CardLink>
                     </CardBody>
-                    <CardFooter>Footer</CardFooter>
                   </Card>
                 </Col>
               );
             })}
         </Row>
-        <Modal isOpen={this.state.toogleModal} toggle={this.closeModel}>
-          <ModalHeader toggle={this.closeModel}> {this.state.showmod.name}</ModalHeader>
-          <ModalBody>{this.state.showmod.desc} </ModalBody>
-          <ModalFooter>
-            <Button color="secondary" onClick={this.closeModel}>
-              Close
-            </Button>
-          </ModalFooter>
+        <Modal
+          isOpen={this.state.toogleModal}
+          toggle={this.closeModel}
+          className="modal-xl"
+        >
+          <ModalHeader toggle={this.closeModel}>
+            {"Responsibilities at "}
+            {this.state.showmod.company}
+            {" as "}
+            {this.state.showmod.name}
+          </ModalHeader>
+          <ModalBody>
+            <ol>
+              {this.state.showmod.values &&
+                this.state.showmod.values.length > 0 &&
+                this.state.showmod.values.map((item, index) => {
+                  return <li>{item.name}</li>;
+                })}
+            </ol>
+          </ModalBody>
         </Modal>
       </Container>
     );

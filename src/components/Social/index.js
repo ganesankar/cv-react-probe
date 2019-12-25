@@ -1,16 +1,7 @@
-import React, { useState } from "react";
-import {
-  Col,
-  Container,
-  Row,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink
-} from "reactstrap";
+import React from "react";
+import { Col, Container, Row } from "reactstrap";
 
-const Contact = props => {
-  console.log("Contact", props.data);
+const Social = props => {
   return (
     <Container fluid>
       <Row>
@@ -20,15 +11,14 @@ const Contact = props => {
             return (
               <Col xs="12" sm="2" md="3">
                 <address>
-                  <strong> {item.name}</strong>
-                  <br />
                   <a
                     rel="noopener noreferrer"
-                    href={item.link}
+                    href={item.elink}
                     target="_blank"
+                    className="btn btn-outline-info d-block"
                   >
-                    {" "}
-                    {item.desc}{" "}
+                    <i className={`fab  fa-lg ${item.icon}`}></i> <br />
+                    <strong>{item.name}</strong>
                   </a>
                 </address>
               </Col>
@@ -39,4 +29,4 @@ const Contact = props => {
   );
 };
 
-export default Contact;
+export default Social;
