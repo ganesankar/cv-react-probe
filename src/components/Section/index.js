@@ -85,7 +85,7 @@ export default class Section extends Component {
   }
   render() {
     return (
-      <Container fluid className={`generalsec1`}>
+      <Container fluid className={`generalsec1`} id={this.props.listItem.type}>
         <Container>
           <Row>
             <Col xs="12" sm="2" md="4" className="leftHead text-md-right text-sm-left">

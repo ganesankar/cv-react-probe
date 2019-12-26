@@ -3,9 +3,7 @@ import _ from "lodash";
 import { Col, Container, Row } from "reactstrap";
 
 const Expertise = props => {
-  console.log("props.data", props.data);
   const expresult = _.groupBy(props.data.values, "desc");
-  console.log("expresult", expresult);
   return (
     <Container fluid>
       <Row>

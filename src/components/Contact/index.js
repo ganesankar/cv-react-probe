@@ -10,7 +10,6 @@ import {
 } from "reactstrap";
 
 const Contact = props => {
-  console.log("Contact", props.data);
   return (
     <Container fluid>
       <Row>

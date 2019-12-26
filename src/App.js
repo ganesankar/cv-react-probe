@@ -6,6 +6,7 @@ import isLocalHost from "./utils/isLocalHost";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
+import AppHeader from "./components/AppHeader";
 export default class App extends Component {
   state = {
     todos: [],
@@ -55,29 +56,39 @@ export default class App extends Component {
   render() {
     const { todos, loading } = this.state;
     todos.sort((a, b) => (a.id > b.id ? 1 : b.id > a.id ? -1 : 0));
+    const menu = [];
+    todos.forEach(function(item, index) {
+      let itemis =  { name: item.name, id: index, type: item.type};
+      menu.push(itemis);
+    });
     return (
       <div className="app">
         {loading && (
-          <div className="c-preloader  js-preloader"><i class="fas fa-circle-notch fa-spin fas-spin"></i>
-            </div>
+          <div className="c-preloader  js-preloader">
+            <i class="fas fa-circle-notch fa-spin fas-spin"></i>
+          </div>
         )}
-
-        {todos &&
-          todos.length > 0 &&
-          todos.map((listItem, index) => {
-            return (
-              <React.Fragment key={index}>
-                <Section fluid listItem={listItem}></Section>
-              </React.Fragment>
-            );
-          })}
-        <Container fluid>
-          <Row>
-            <Col xs="12" sm="12" md="13" className="text-center">
-              &copy; Ganesan Karuppaiya
-            </Col>
-          </Row>
-        </Container>
+        {todos && (
+          <div>
+            <AppHeader menu={menu}/>
+            {todos &&
+              todos.length > 0 &&
+              todos.map((listItem, index) => {
+                return (
+                  <React.Fragment key={index}>
+                    <Section fluid listItem={listItem} ></Section>
+                  </React.Fragment>
+                );
+              })}
+            <Container fluid>
+              <Row>
+                <Col xs="12" sm="12" md="13" className="text-center">
+                  &copy; Ganesan Karuppaiya
+                </Col>
+              </Row>
+            </Container>
+          </div>
+        )}
       </div>
     );
   }

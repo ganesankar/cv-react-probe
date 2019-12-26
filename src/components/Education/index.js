@@ -2,7 +2,6 @@ import React from "react";
 import { Container, Row, Col } from "reactstrap";
 
 const Education = props => {
-  console.log("props.data", props.data);
   return (
     <Container fluid>
       {props.data &&
