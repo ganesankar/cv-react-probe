@@ -18,9 +18,9 @@ const AppHeader = props => {
       case "social":
         return "SOCIAL";
       case "intro":
-        return "SOCIAL";
+        return "INTRO";
       case "contacts":
-        return "SOCIAL";
+        return "CONTACT";
       default:
         return listitem.name.toUpperCase();
     }
