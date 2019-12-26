@@ -7,6 +7,24 @@ body {
   background: #f8f8f8;
   border-top: 5px solid #75bef2;
 }
+
+aside nav {
+  max-width: 220px !important;
+}
+aside nav ul  {
+  list-style: none;
+  padding: 10px 0 !important;
+  margin: 0;
+}
+aside nav li  {
+  list-style: none;
+  padding: 0px 10px !important;
+  margin: 0;
+}
+aside nav li  a{
+  
+  padding: 5px 5px 5px 15px !important;
+}
 .c-preloader {
   -webkit-justify-content: center;
   justify-content: center;
@@ -82,13 +100,13 @@ h4 {
 }
 .leftHead {
   background: #d9d9d929;
-  padding: 30px;
+  padding: 60px  30px 30px 30px;
 }
 .generalsec1:nth-child(even) {
   background: #d9d9d929;
 }
 .rightContainer {
-  padding: 30px;
+  padding: 60px  30px 30px 30px;
   display: flex;
   min-height: 100%;
 }
@@ -112,6 +130,7 @@ h4 {
 .min10vh {
   min-height: 10vh;
 }
+
 .leftHead h4 {
   font-size: 18px;
   margin-bottom: 0px;
