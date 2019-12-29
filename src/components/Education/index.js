@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "reactstrap";
+import DateDivider from "../DateDivider";
 
 const Education = props => {
   return (
@@ -11,13 +12,15 @@ const Education = props => {
             <Row>
               <Col xs="12" sm="12" md="12">
                 <div className="content-item">
-                  <small>
-                    {" "}
-                    {item.startdate} - {item.enddate}
-                  </small>
-                  <h3>{item.name}</h3>
+                  <DateDivider
+                    startdate={item.startdate}
+                    enddate={item.enddate}
+                  />
+
+                  <h3 className="text-primary">{item.name}</h3>
                   <h4>{item.institute}</h4>
                   <p>{item.location}</p>
+                  <p>{item.desc}</p>
                 </div>
               </Col>
             </Row>

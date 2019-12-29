@@ -1,29 +1,15 @@
-body {
-  font-family: hind, sans-serif;
-  font-size: 15px;
-  line-height: 1.8em;
-  color: #989898;
-  font-weight: 300;
-  background: #f8f8f8;
-  border-top: 5px solid #75bef2;
-}
 
-aside nav {
-  max-width: 220px !important;
+  body {
+    background-color: #f7fbfd;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #24292e;
 }
-aside nav ul  {
-  list-style: none;
-  padding: 10px 0 !important;
-  margin: 0;
-}
-aside nav li  {
-  list-style: none;
-  padding: 0px 10px !important;
-  margin: 0;
-}
-aside nav li  a{
-  
-  padding: 5px 5px 5px 15px !important;
+.bd-navbar {
+  min-height: 4rem;background-color: #ffffff!important;
+  color:#fff;
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,.05), inset 0 -1px 0 rgba(0,0,0,.1);
 }
 .c-preloader {
   -webkit-justify-content: center;
@@ -99,11 +85,11 @@ h4 {
   font-weight: 500;
 }
 .leftHead {
-  background: #d9d9d929;
+  background:#00000008;
   padding: 60px  30px 30px 30px;
 }
 .generalsec1:nth-child(even) {
-  background: #d9d9d929;
+  background: #00000008;
 }
 .rightContainer {
   padding: 60px  30px 30px 30px;
@@ -178,4 +164,51 @@ h4 {
 .content-item h4 {
   margin: 0;
   line-height: 1;
+}
+.pull-right-menu{ display: block;
+  float: right;
+  /* width: 20px; */
+  right: 8px;
+  position: absolute;}
+
+  .dropdown-item {
+   
+    padding: 0 !important;}
+
+    .dateDivider {
+      background-color: #dcdfe6;
+      position: relative;
+      display: block;
+      height: 1px;
+      width: 100%;
+      margin: 24px 0;
+  }
+    
+  .dateDividerText {
+    position: absolute;
+    background-color: #f7fbfd;
+    padding: 0 20px;
+    color: #303133;
+    right: 20px;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    font-weight: 500;
+    font-size: 14px;
+}
+.generalsec1:nth-child(even) .dateDividerText {
+  background: #eff3f5;
+}
+.card .dateDividerText {
+  background: #fafdfe;
+}
+.dateDividerLeft {
+  position: absolute;
+  background-color: #eff3f5;
+  padding: 0 20px;
+  color: #303133;
+  left: 20px;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-weight: 500;
+  font-size: 14px;
 }

@@ -10,13 +10,19 @@ const OtherProjects = props => {
           props.data.values.map((item, index) => {
             return (
               <Col xs="12" sm="12" md="12">
-                <address>
-                  <a rel="noopener noreferrer" href={item.link} target="_blank">
-                    <strong> {item.name}</strong>
-                    <br />
-                    {item.desc}{" "}
-                  </a>
-                </address>
+                <strong className="text-primary">{item.name}</strong>
+                <div className="dateDivider">
+                  <div className="dateDividerLeft">
+                    <a
+                      rel="noopener noreferrer"
+                      href={item.portfolio ? item.portfolio : item.link}
+                      target="_blank"
+                      className="text-secondary"
+                    >
+                      {item.elink ? item.portfolio : item.link}
+                    </a>
+                  </div>
+                </div>
               </Col>
             );
           })}

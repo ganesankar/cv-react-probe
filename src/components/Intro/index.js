@@ -6,7 +6,7 @@ const Intro = props => {
       <div className="p-2 ">
         {" "}
         <h1>{props.data.name}</h1>
-        {props.data.desc}
+        <div dangerouslySetInnerHTML={{__html: props.data.desc}} />
       </div>
     </div>
   );

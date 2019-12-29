@@ -14,6 +14,9 @@ import {
   ModalHeader,
   ModalBody
 } from "reactstrap";
+
+import DateDivider from "../DateDivider";
+
 export default class Experience extends Component {
   state = {
     showmod: {},
@@ -58,21 +61,19 @@ export default class Experience extends Component {
                         <i className="fas fa-map-marked in-view"></i>{" "}
                         {item.location}{" "}
                       </CardSubtitle>
-                      <span class="badge badge-secondary">
-                        {item.startdate === "c" ? "Present" : item.startdate} -{" "}
-                        {item.enddate === "c" ? "Present" : item.enddate}
-                      </span>
                       {item.size && (
                         <span class="badge badge-info">
                           <i class="fas fa-users in-view"></i> {item.size}
                         </span>
-                      )}
+                      )} {' '}
                       {item.client && (
                         <span class="badge badge-info">
                           <i class="far fa-building in-view"></i> {item.client}
                         </span>
                       )}
-                      <hr />
+                      <DateDivider startdate={item.startdate}  enddate={item.enddate} />
+                      
+                      
                       <CardText>{item.desc}</CardText>
                       <hr />
 

@@ -19,12 +19,14 @@ const Contact = props => {
             return (
               <Col xs="12" sm="2" md="3">
                 <address>
-                  <strong> {item.name}</strong>
+                  <strong 
+                      className="text-primary"> {item.name}</strong>
                   <br />
                   <a
                     rel="noopener noreferrer"
                     href={item.link}
                     target="_blank"
+                    className="text-secondary"
                   >
                     {" "}
                     {item.desc}{" "}
