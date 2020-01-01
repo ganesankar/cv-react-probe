@@ -1,6 +1,10 @@
 /* Api methods to call /functions */
 
-
+const getCvList = () => {
+  return fetch('/.netlify/functions/cv-list').then((response) => {
+    return response.json()
+  })
+}
 const getCv = () => {
   return fetch('/.netlify/functions/cv-all').then((response) => {
     return response.json()
