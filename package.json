@@ -1,6 +1,9 @@
 {
   "name": "netlify-fauna",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "description": "React.js, bootstrap and FaunaDB based CV  for running Netlify functions locally in a dev environment and as a generated static site deployed to Netlify",
+  "author": "Ganesan Karuppaiya <ganesank@live.com>",
+  "license": "MIT",
   "private": true,
   "dependencies": {
     "bootstrap": "^4.4.1",
