@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 
-import { Container, Row, Col } from "reactstrap";
 
 import Contact from "../Contact";
 import Intro from "../Intro";
@@ -85,27 +84,25 @@ export default class Section extends Component {
   }
   render() {
     return (
-      <Container fluid className={`generalsec1`} id={this.props.listItem.type}>
-        <Container>
-          <Row>
-            <Col xs="12" sm="2" md="4" className="leftHead text-md-right text-sm-left">
+      <div fluid className={`generalsec1`} id={this.props.listItem.type}>
+        <div  className="generalSecGrid ms-Grid " dir="ltr">
+          <div className="ms-Grid-row parent">
+            <div className="ms-Grid-col ms-sm12 ms-md12 ms-lg3 leftHead text-md-right text-sm-left">
               {this.title(this.props.listItem)}
-            </Col>
-            <Col
-              xs="12"
-              sm="10"
-              md="8"
-              className={`rightContent ${this.sectionClass(
+            </div>
+            <div
+              
+              className={`ms-Grid-col ms-sm12 ms-md12 ms-lg9 rightContent ${this.sectionClass(
                 this.props.listItem.type
               )}`}
             >
               <div className="rightContainer">
                 {this.renderTodos(this.props.listItem)}
               </div>
-            </Col>
-          </Row>
-        </Container>
-      </Container>
+            </div>
+          </div>
+        </div>
+      </div>
     );
   }
 }

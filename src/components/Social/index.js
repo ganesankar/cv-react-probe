@@ -1,31 +1,28 @@
 import React from "react";
-import { Col, Container, Row } from "reactstrap";
+import { CompoundButton } from "office-ui-fabric-react";
 
 const Social = props => {
   return (
-    <Container fluid>
-      <Row>
+    <div className="ms-Grid" dir="ltr">
+      <div className="ms-Grid-row">
         {props.data &&
           props.data.values.length > 0 &&
           props.data.values.map((item, index) => {
             return (
-              <Col xs="12" sm="2" md="3">
-                <address>
-                  <a
-                    rel="noopener noreferrer"
-                    href={item.elink}
-                    target="_blank"
-                    className="btn btn-outline-info d-block"
-                  >
-                    <i className={`fab  fa-lg ${item.icon}`}></i> <br />
-                    <strong>{item.name}</strong>
-                  </a>
-                </address>
-              </Col>
+              <div className="ms-Grid-col ms-sm6 ms-md3 ms-lg3">
+                <CompoundButton primary
+                  rel="noopener noreferrer"
+                  href={item.elink}
+                  target="_blank"
+                  secondaryText=""
+                >
+                  {item.name.toUpperCase()}
+                </CompoundButton>
+              </div>
             );
           })}
-      </Row>
-    </Container>
+      </div>
+    </div>
   );
 };
 

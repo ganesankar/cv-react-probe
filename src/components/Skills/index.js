@@ -1,32 +1,26 @@
 import React from "react";
-import { Col, Container, Row, Progress } from "reactstrap";
+import { ProgressIndicator } from "office-ui-fabric-react/lib/ProgressIndicator";
+
 
 const Skills = props => {
   return (
-    <Container fluid>
-      <Row>
+    <div className="ms-Grid" dir="ltr">
+      <div className="ms-Grid-row">
         {props.data &&
           props.data.values.length > 0 &&
           props.data.values.map((item, index) => {
             return (
-              <Col xs="12" sm="2" md="6">
-                <address>
-                  <strong>
-                    {" "}
-                    <span class="text-info">
-                      {item.percentage}
-                      {"% "}
-                    </span>
-                    {item.name}
-                  </strong>
-                  <br />
-                  <Progress color="info" value={item.percentage} />
-                </address>
-              </Col>
+              <div className="ms-Grid-col ms-sm12 ms-md6 ms-lg6">
+                <ProgressIndicator
+                  label={`${item.name} : ${item.percentage} `}
+                  description={` `}
+                  percentComplete={Number(item.percentage / 100)}
+                />
+              </div>
             );
           })}
-      </Row>
-    </Container>
+      </div>
+    </div>
   );
 };
 

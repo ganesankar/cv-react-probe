@@ -1,42 +1,29 @@
 import React, { useState } from "react";
-import {
-  Col,
-  Container,
-  Row,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink
-} from "reactstrap";
 
+import { CompoundButton } from "office-ui-fabric-react";
 const Contact = props => {
   return (
-    <Container fluid>
-      <Row>
+    <div className="ms-Grid" dir="ltr">
+      <div className="ms-Grid-row">
         {props.data &&
           props.data.values.length > 0 &&
           props.data.values.map((item, index) => {
             return (
-              <Col xs="12" sm="2" md="3">
-                <address>
-                  <strong 
-                      className="text-primary"> {item.name}</strong>
-                  <br />
-                  <a
-                    rel="noopener noreferrer"
-                    href={item.link}
-                    target="_blank"
-                    className="text-secondary"
-                  >
-                    {" "}
-                    {item.desc}{" "}
-                  </a>
-                </address>
-              </Col>
+              <div className="ms-Grid-col ms-sm6 ms-md3 ms-lg3">
+              <CompoundButton primary
+                rel="noopener noreferrer"
+                href={item.link}
+                target="_blank"
+                secondaryText={item.desc}
+              >
+                {item.name.toUpperCase()}
+              </CompoundButton>
+            </div>
+              
             );
           })}
-      </Row>
-    </Container>
+      </div>
+    </div>
   );
 };
 

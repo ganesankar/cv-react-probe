@@ -1,15 +1,19 @@
-
-  body {
-    background-color: #f7fbfd;
-    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
-    font-size: 14px;
-    line-height: 1.5;
-    color: #24292e;
+body {
+  background-color: #faf9f8;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
+    sans-serif, Apple Color Emoji, Segoe UI Emoji;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #24292e;
+  margin: 0;
+  padding: 0;
 }
 .bd-navbar {
-  min-height: 4rem;background-color: #ffffff!important;
-  color:#fff;
-  box-shadow: 0 0.5rem 1rem rgba(0,0,0,.05), inset 0 -1px 0 rgba(0,0,0,.1);
+  min-height: 4rem;
+  background-color: #ffffff !important;
+  color: #fff;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
 }
 .c-preloader {
   -webkit-justify-content: center;
@@ -24,7 +28,7 @@
   width: 100%;
 }
 
- .c-preloader {
+.c-preloader {
   display: -ms-flexbox;
   display: flex;
 }
@@ -35,7 +39,7 @@
 }
 
 .c-preloader__spinner:before {
-  content: 'Loading…';
+  content: "Loading…";
   position: absolute;
   top: 50%;
   left: 50%;
@@ -52,13 +56,12 @@
 }
 
 .c-preloader__spinner:not(:required):before {
-  content: '';
+  content: "";
   border-radius: 50%;
   border: 4px solid transparent;
-  animation: c-preloader__spinner .8s ease infinite;
-  -webkit-animation: c-preloader__spinner .8s ease infinite;
+  animation: c-preloader__spinner 0.8s ease infinite;
+  -webkit-animation: c-preloader__spinner 0.8s ease infinite;
 }
-
 
 h1,
 h2,
@@ -85,21 +88,22 @@ h4 {
   font-weight: 500;
 }
 .leftHead {
-  background:#00000008;
-  padding: 60px  30px 30px 30px;
+  background: #00000008;
+  padding: 60px 30px 30px 30px;
 }
-.generalsec1:nth-child(even) {
+.generalsec1:nth-child(odd) {
   background: #00000008;
 }
 .rightContainer {
-  padding: 60px  30px 30px 30px;
+  padding: 60px 30px 30px 30px;
   display: flex;
   min-height: 100%;
 }
-@media (max-width: 768px) { .rightContainer {
-  padding: 30px 0;
-  
-}}
+@media (max-width: 768px) {
+  .rightContainer {
+    padding: 30px 0;
+  }
+}
 .rightContent strong {
   font-size: 16px;
   font-weight: 500;
@@ -165,41 +169,47 @@ h4 {
   margin: 0;
   line-height: 1;
 }
-.pull-right-menu{ display: block;
+.pull-right-menu {
+  display: block;
   float: right;
   /* width: 20px; */
   right: 8px;
-  position: absolute;}
-
-  .dropdown-item {
-   
-    padding: 0 !important;}
-
-    .dateDivider {
-      background-color: #dcdfe6;
-      position: relative;
-      display: block;
-      height: 1px;
-      width: 100%;
-      margin: 24px 0;
-  }
-    
-  .dateDividerText {
-    position: absolute;
-    background-color: #f7fbfd;
-    padding: 0 20px;
-    color: #303133;
-    right: 20px;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
-    font-weight: 500;
-    font-size: 14px;
+  position: absolute;
 }
-.generalsec1:nth-child(even) .dateDividerText {
-  background: #eff3f5;
+
+.dropdown-item {
+  padding: 0 !important;
 }
-.card .dateDividerText {
-  background: #fafdfe;
+
+.dateDivider {
+  background-color: #dcdfe6;
+  position: relative;
+  display: block;
+  height: 1px;
+  width: 100%;
+  margin: 24px 0;
+}
+
+.dateDividerText {
+  position: absolute;
+  background-color: #faf9f8;
+  padding: 0 20px;
+  right: 20px;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.generalsec1:nth-child(odd) .dateDividerText {
+  background: #f2f1f0;
+}
+.generalsec1 .ms-Card .dateDividerText {
+  background-color: #ffffff;
+}
+
+.generalsec1 .itemCell-57:hover .dateDividerText {
+  background: rgb(242, 241, 240);
+}
+.generalsec1:nth-child(odd) .itemCell-57:hover .dateDividerText {
+  background: rgb(234, 233, 233);
 }
 .dateDividerLeft {
   position: absolute;
@@ -212,3 +222,54 @@ h4 {
   font-weight: 500;
   font-size: 14px;
 }
+
+.ms-Grid {
+  width: 100%;
+}
+
+.ms-Grid .ms-Button--compoundPrimary {
+  width: 100%;
+}
+
+.content-99 {
+  background-color: #f7fbfd;
+}
+
+.ms-Stack.ms-Card.css-100,
+.css-108, .ms-Card  {
+  width: 100%;
+  max-width: inherit;
+  margin-bottom: 15px;
+  background-color: #fff;
+}
+.generalSecGrid {
+  max-width: 990px;
+  margin: 0 auto;
+}
+
+a.itemCell-57,
+a.itemCell-57:hover {
+  text-decoration: none;
+}
+.noShow {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: none;
+  background: none;
+}
+.header
+.root-67 {
+  position: fixed;
+  width: 100%;
+  z-index: 5;
+  padding: 0;
+  top: 0;
+  left: 0;
+  box-shadow: rgba(0, 0, 0, 0.133) 0px 6.4px 14.4px 0px, rgba(0, 0, 0, 0.11) 0px 1.2px 3.6px 0px;
+}
+
+.ms-Grid-row.parent {
+  display: flex;
+}
+.itemName-63 { font-weight: 500; margin-top:5px;}

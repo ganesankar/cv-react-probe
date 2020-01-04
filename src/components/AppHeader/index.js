@@ -1,18 +1,9 @@
 import React, { Component } from "react";
-
+import { initializeIcons } from "office-ui-fabric-react/lib/Icons";
+import { CommandBar } from "office-ui-fabric-react/lib/CommandBar";
 import ScrollspyNav from "react-scrollspy-nav";
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Dropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  NavItem,
-  NavLink
-} from "reactstrap";
+
+initializeIcons();
 export default class AppHeader extends Component {
   state = {
     showmod: {},
@@ -42,56 +33,58 @@ export default class AppHeader extends Component {
   };
   getMenu = replists => {
     const men = [];
-    replists.forEach(function(item, index) {
-      men.push(item.type);
+    replists.forEach(function(item) {
+      men.push(item.key);
+    });
+    return men;
+  };
+  getMenuArr = replists => {
+    const men = [];
+    replists.forEach(function(item) {
+      switch (item.key) {
+        case "social":
+          item.text = "SOCIAL";
+          break;
+        case "intro":
+          item.text = "INTRO";
+          break;
+        case "contacts":
+          item.text = "CONTACT";
+          break;
+        default:
+          item.text = item.text.toUpperCase();
+      }
+      men.push(item);
     });
     return men;
   };
 
   render() {
-    const menuArr = this.getMenu(this.props.menu);
+    const menuList = this.getMenu(this.props.fabricMenu);
+    const menuArr = this.getMenuArr(this.props.fabricMenu);
     return (
-      <div>
-        <ScrollspyNav scrollTargetIds={menuArr} activeNavClass="is-active">
-          <Navbar color="light" expand="md" className="fixed-top bd-navbar">
-            <NavbarBrand href="/">Ganesan Karuppaiya</NavbarBrand>
-            <Dropdown
-              isOpen={this.state.toogleModal}
-              toggle={this.toggle}
-              className="pull-right-menu"
-            >
-              <DropdownToggle >
-                <svg
-                  class="bi bi-three-dots"
-                  width="1em"
-                  height="1em"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M5 11.5a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm5 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm5 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3z"
-                    clip-rule="evenodd"
-                  ></path>
-                </svg>
-              </DropdownToggle>
-              <DropdownMenu>
-                {this.props.menu &&
-                  this.props.menu.length > 0 &&
-                  this.props.menu.map((item, index) => {
-                    return (
-                      <DropdownItem>
-                        <NavLink href={`#${item.type}`}>
-                          {" "}
-                          {this.title(item)}
-                        </NavLink>
-                      </DropdownItem>
-                    );
-                  })}
-              </DropdownMenu>
-            </Dropdown>
-          </Navbar>
+      <div className="header">
+        <ScrollspyNav scrollTargetIds={menuList} activeNavClass="is-active">
+          <CommandBar
+            items={[
+              {
+                key: "component-example-menu",
+                name: "Ganesan Karuppaiya"
+              }
+            ]}
+            farItems={[
+              {
+                key: "newItem",
+                text: "MENU",
+                iconProps: { iconName: "GlobalNavButton" },
+                split: true,
+                ariaLabel: "MENU",
+                subMenuProps: {
+                  items: this.props.fabricMenu
+                }
+              }
+            ]}
+          />
         </ScrollspyNav>
       </div>
     );
