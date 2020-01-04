@@ -1,109 +1,31 @@
 import React, { Component } from "react";
-
-import {
-  Card,
-  ICardTokens,
-  ICardSectionStyles,
-  ICardSectionTokens
-} from "@uifabric/react-cards";
+import { Card, ICardTokens } from "@uifabric/react-cards";
 import { Panel, PanelType } from "office-ui-fabric-react/lib/Panel";
 import {
   Callout,
   getTheme,
   FontWeights,
   mergeStyleSets,
-  getId
-} from "office-ui-fabric-react";
-
-import { useConstCallback } from "@uifabric/react-hooks";
-import {
   ActionButton,
-  IButtonStyles,
   IIconProps,
   Icon,
-  IIconStyles,
-  Image,
   Persona,
   Stack,
   IStackTokens,
-  Text,
-  ITextStyles
+  Text
 } from "office-ui-fabric-react";
 
 import DateDivider from "../DateDivider";
-const siteTextStyles: ITextStyles = {
-  root: {
-    color: "#025F52"
-  }
-};
-const descriptionTextStyles: ITextStyles = {
-  root: {
-    color: "#333333"
-  }
-};
-const helpfulTextStyles: ITextStyles = {
-  root: {
-    color: "#333333"
-  }
-};
-const iconStyles: IIconStyles = {
-  root: {
-    color: "#0078D4",
-    fontSize: 16
-  }
-};
-const footerCardSectionStyles: ICardSectionStyles = {
-  root: {
-    borderTop: "1px solid #F3F2F1"
-  }
-};
 
-const dateTextStyles: ITextStyles = {
-  root: {
-    color: "#505050"
-  }
-};
-const subduedTextStyles: ITextStyles = {
-  root: {
-    color: "#666666"
-  }
-};
-const actionButtonStyles: IButtonStyles = {
-  root: {
-    border: "none",
-    color: "#333333",
-    height: "auto",
-    minHeight: 0,
-    minWidth: 0,
-    padding: 0,
-
-    selectors: {
-      ":hover": {
-        color: "#0078D4"
-      }
-    }
-  },
-  textContainer: {
-    fontSize: 12
-  }
-};
-const addFriendIcon: IIconProps = { iconName: "AddFriend" };
-const sectionStackTokens: IStackTokens = { childrenGap: 30 };
-const cardTokens: ICardTokens = { childrenMargin: 12 };
-const footerCardSectionTokens: ICardSectionTokens = { padding: "12px 0px 0px" };
-const backgroundImageCardSectionTokens: ICardSectionTokens = { padding: 12 };
-const agendaCardSectionTokens: ICardSectionTokens = { childrenGap: 0 };
-const attendantsCardSectionTokens: ICardSectionTokens = { childrenGap: 6 };
 const theme = getTheme();
 const styles = mergeStyleSets({
-  buttonArea: {
-    verticalAlign: "top",
-    display: "inline-block",
-    textAlign: "center",
-    margin: "0 100px",
-    minWidth: 130,
-    height: 32
+  addFriendIcon: { iconName: "AddFriend" },
+  cardTokens: { childrenMargin: 12 },
+  card: {
+    padding: "10px"
   },
+  footerCardSectionTokens: { padding: "12px 0px 0px" },
+
   callout: {
     maxWidth: 300
   },
@@ -128,20 +50,67 @@ const styles = mergeStyleSets({
     width: "100%",
     whiteSpace: "nowrap"
   },
-  subtext: [
-    theme.fonts.small,
-    {
-      margin: 0,
-      color: theme.palette.neutralPrimary,
-      fontWeight: FontWeights.semilight
-    }
-  ],
   link: [
     theme.fonts.medium,
     {
       color: theme.palette.neutralPrimary
     }
-  ]
+  ],
+  siteTextStyles: {
+    root: {
+      color: "#025F52"
+    }
+  },
+  descriptionTextStyles: {
+    root: {
+      color: "#333333"
+    }
+  },
+  helpfulTextStyles: {
+    root: {
+      color: "#333333"
+    }
+  },
+  iconStyles: {
+    root: {
+      color: "#0078D4",
+      fontSize: 16
+    }
+  },
+  footerCardSectionStyles: {
+    root: {
+      borderTop: "1px solid #F3F2F1"
+    }
+  },
+  dateTextStyles: {
+    root: {
+      color: "#505050"
+    }
+  },
+  subduedTextStyles: {
+    root: {
+      color: "#666666"
+    }
+  },
+  actionButtonStyles: {
+    root: {
+      border: "none",
+      color: "#333333",
+      height: "auto",
+      minHeight: 0,
+      minWidth: 0,
+      padding: 0,
+
+      selectors: {
+        ":hover": {
+          color: "#0078D4"
+        }
+      }
+    },
+    textContainer: {
+      fontSize: 12
+    }
+  }
 });
 
 export default class Experience extends Component {
@@ -166,7 +135,6 @@ export default class Experience extends Component {
   };
 
   toogleCallOut = (item, iref) => {
-    console.log(item);
     this.setState({
       isCalloutVisible: !this.state.isCalloutVisible,
       iref: iref,
@@ -176,6 +144,7 @@ export default class Experience extends Component {
 
   render() {
     const { showMenu } = this.props;
+
     const showOrHide = showMenu ? "flex" : "none";
 
     return (
@@ -188,7 +157,8 @@ export default class Experience extends Component {
                 <div className="ms-Grid-col ms-sm12 ms-md12 ms-lg12">
                   <Card
                     aria-label="Clickable vertical card with image bleeding at the center of the card"
-                    tokens={cardTokens}
+                    tokens={styles.cardTokens}
+                    styles={styles.card}
                   >
                     <Card.Item>
                       <Persona
@@ -198,69 +168,80 @@ export default class Experience extends Component {
                     </Card.Item>
                     <Card.Item fill></Card.Item>
                     <Card.Section>
-                      <Text variant="small" styles={siteTextStyles}>
+                      <Text variant="small" styles={styles.siteTextStyles}>
                         <DateDivider
                           startdate={item.startdate}
                           enddate={item.enddate}
                         />
                       </Text>
-                      <Text styles={descriptionTextStyles}>{item.desc}</Text>
-                      <Text variant="small" styles={helpfulTextStyles}></Text>
+                      <Text styles={styles.descriptionTextStyles}>
+                        {item.desc}
+                      </Text>
+                      <Text
+                        variant="small"
+                        styles={styles.helpfulTextStyles}
+                      ></Text>
                     </Card.Section>
                     <Card.Section
                       horizontal
-                      styles={footerCardSectionStyles}
-                      tokens={footerCardSectionTokens}
+                      styles={styles.footerCardSectionStyles}
+                      tokens={styles.footerCardSectionTokens}
                     >
                       {item.values && (
                         <ActionButton
-                          styles={iconStyles}
+                          styles={styles.iconStyles}
                           onClick={() => {
                             this.openModel(item);
                           }}
-                          iconProps={addFriendIcon}
+                          iconProps={styles.addFriendIcon}
                           allowDisabledFocus
                         >
                           Responsibilities
                         </ActionButton>
                       )}
-                     
+
                       {item.technology && (
                         <div>
-                           <input
-                        className="noShow"
-                        type="text"
-                        ref={input => {
-                          this[
-                            `btn_tech_${item.name.replace(/[^A-Z0-9]/gi, "_")}`
-                          ] = input;
-                        }}
-                        value=""
-                      />
-                        
-                        <ActionButton
-                         
-                          styles={iconStyles}
-                          onClick={() => {
-                            this.toogleCallOut(
-                              item,
-                              `btn_tech_${item.name.replace(
-                                /[^A-Z0-9]/gi,
-                                "_"
-                              )}`
-                            );
-                          }}
-                          iconProps={addFriendIcon}
-                          allowDisabledFocus
-                        >
-                          Technology Used
-                        </ActionButton></div>
+                          <input
+                            className="noShow"
+                            type="text"
+                            ref={input => {
+                              this[
+                                `btn_tech_${item.name.replace(
+                                  /[^A-Z0-9]/gi,
+                                  "_"
+                                )}`
+                              ] = input;
+                            }}
+                            value=""
+                          />
+
+                          <ActionButton
+                            styles={styles.iconStyles}
+                            onClick={() => {
+                              this.toogleCallOut(
+                                item,
+                                `btn_tech_${item.name.replace(
+                                  /[^A-Z0-9]/gi,
+                                  "_"
+                                )}`
+                              );
+                            }}
+                            iconProps={styles.addFriendIcon}
+                            allowDisabledFocus
+                          >
+                            Technology Used
+                          </ActionButton>
+                        </div>
                       )}
-                      
+
                       <Stack.Item grow={1}>
                         <span />
                       </Stack.Item>
-                      <Icon iconName="MoreVertical" styles={iconStyles} />
+                      <Icon
+                        iconName="MoreVertical"
+                        styles={styles.iconStyles}
+                      />
                     </Card.Section>
                   </Card>
                 </div>

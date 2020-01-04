@@ -68,14 +68,14 @@ export default class AppHeader extends Component {
           <CommandBar
             items={[
               {
-                key: "component-example-menu",
+                key: "ganesan-karuppaiya",
                 name: "Ganesan Karuppaiya"
               }
             ]}
             farItems={[
               {
                 key: "newItem",
-                text: "MENU",
+                text: "",
                 iconProps: { iconName: "GlobalNavButton" },
                 split: true,
                 ariaLabel: "MENU",

@@ -10,19 +10,11 @@ import {
 
 import DateDivider from "../DateDivider";
 
-interface IListBasicExampleClassObject {
-  itemCell: string;
-  itemImage: string;
-  itemContent: string;
-  itemName: string;
-  itemIndex: string;
-  chevron: string;
-}
 
 const theme: ITheme = getTheme();
 const { palette, semanticColors, fonts } = theme;
 
-const classNames: IListBasicExampleClassObject = mergeStyleSets({
+const classNames = mergeStyleSets({
   itemCell: [
     getFocusStyle(theme, { inset: -1 }),
     {
