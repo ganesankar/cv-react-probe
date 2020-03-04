@@ -1,22 +1,10 @@
 import React, { Component } from "react";
-import { Spinner, SpinnerSize } from "office-ui-fabric-react/lib/Spinner";
-import { CommandBar } from "office-ui-fabric-react/lib/CommandBar";
-
-import "office-ui-fabric-core/dist/css/fabric.min.css";
-import { mergeStyleSets } from "office-ui-fabric-react/lib/Styling";
-import {
-  Dialog,
-  DialogType,
-  DialogFooter
-} from "office-ui-fabric-react/lib/Dialog";
 
 import Section from "../components/Section";
 import api from "../utils/api";
 import isLocalHost from "../utils/isLocalHost";
 
 import AppHeader from "../components/AppHeader";
-
-
 
 export default class Home extends Component {
   state = {
@@ -67,26 +55,8 @@ export default class Home extends Component {
             toogleModal: !this.state.toogleModal
           })
       }
-    ]
-    ,classNames: mergeStyleSets({
-        container: {
-          overflow: "auto",
-          maxHeight: 500
-        },
-      
-        itemContent: {
-          marginLeft: 10,
-          overflow: "hidden",
-          flexGrow: 1
-        },
-        itemName: [
-          {
-            whiteSpace: "nowrap",
-            overflow: "hidden",
-            textOverflow: "ellipsis"
-          }
-        ]
-      })
+    ],
+    classNames: {}
   };
   componentDidMount() {
     // Fetch all todos
@@ -148,10 +118,7 @@ export default class Home extends Component {
       <div className="app">
         {loading && (
           <div className="c-preloader  js-preloader">
-            <i className="preloader__spinner">
-              {" "}
-              <Spinner size={SpinnerSize.large} />
-            </i>
+            <i className="preloader__spinner"> dfdf</i>
           </div>
         )}
         {todos && (
@@ -162,56 +129,11 @@ export default class Home extends Component {
               todos.map((listItem, index) => {
                 return (
                   <React.Fragment key={index}>
-                    <Section fluid listItem={listItem}></Section>
+                    <Section fluid listItem={listItem} />
                   </React.Fragment>
                 );
               })}
-            <div fluid className={`generalsec1`}>
-              <CommandBar items={this.state.items} ariaLabel="Use" />
-
-              <Dialog
-                onDismiss={this.toggle}
-                hidden={this.state.toogleModal}
-                dialogContentProps={{
-                  type: DialogType.normal,
-                  title: "Technology Used",
-                  closeButtonAriaLabel: "Close",
-                  subText: ""
-                }}
-                modalProps={{
-                  isBlocking: false,
-                  styles: { main: { maxWidth: 450 } }
-                }}
-              >
-                <div className="ms-Grid" dir="ltr">
-                  <div className="ms-Grid-row">
-                    <div className="ms-Grid-col ms-sm12 ms-md12 ms-lg12">
-                      {this.state.tableData.length > 0 &&
-                        this.state.tableData.map((item, index) => {
-                          return (
-                            <a
-                              rel="noopener noreferrer"
-                              className={this.state.classNames.itemCell}
-                              data-is-focusable={true}
-                            >
-                              <div className={this.state.classNames.itemContent}>
-                                <div className={this.state.classNames.itemName}>
-                                  {item.name}
-                                </div>
-                                <div className={this.state.classNames.itemIndex}>
-                                  {" "}
-                                  {item.value}
-                                </div>
-                              </div>
-                            </a>
-                          );
-                        })}
-                    </div>{" "}
-                  </div>{" "}
-                </div>
-                <DialogFooter></DialogFooter>
-              </Dialog>
-            </div>
+            <div fluid className={`generalsec1`} />
           </div>
         )}
       </div>

@@ -6,14 +6,10 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "@uifabric/react-cards": "^0.109.2",
     "bootstrap": "^4.4.1",
-    "faunadb": "^2.6.1",
     "lodash": "^4.17.15",
     "markdown-magic": "^1.0.0",
     "moment": "^2.24.0",
-    "office-ui-fabric-core": "^11.0.0",
-    "office-ui-fabric-react": "^7.78.1",
     "pdfmake": "^0.1.63",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
@@ -27,17 +23,12 @@
   "scripts": {
     "bootstrap": "netlify dev:exec node ./scripts/bootstrap-fauna-database.js",
     "docs": "md-magic --path '**/*.md' --ignore 'node_modules'",
-    "start": "netlify dev",
+    "start": "react-scripts start",
     "prebuild": "echo 'setup faunaDB' && npm run bootstrap",
     "build": "react-scripts build"
   },
   "devDependencies": {
     "netlify-cli": "^2.19.0"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "browserslist": [">0.2%", "not dead", "not ie <= 11", "not op_mini all"]
 }
