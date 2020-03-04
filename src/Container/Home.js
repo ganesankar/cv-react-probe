@@ -1,3 +1,4 @@
+
 import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
@@ -666,6 +667,7 @@ class Home extends Component {
       items: items
     };
     return (
+
       <div className="page-wrapper container-xl">
       {drawCharts && (
       <div className=" container-xl">
@@ -912,6 +914,7 @@ class Home extends Component {
                 
               </div>
             </div>
+
           </div>
         </div>
 
