@@ -14,6 +14,7 @@ import HighchartsSunburst from 'highcharts/modules/sunburst';
 HighchartsXrange(Highcharts);
 HighchartsSunburst(Highcharts);
 
+
 export function getDate(tdate) {
   const pD =
     tdate === 'c' || tdate === 'p'
