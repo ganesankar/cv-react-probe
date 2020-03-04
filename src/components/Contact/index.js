@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-import { CompoundButton } from "office-ui-fabric-react";
 const Contact = props => {
   return (
     <div className="ms-Grid" dir="ltr">
@@ -10,16 +9,8 @@ const Contact = props => {
           props.data.values.map((item, index) => {
             return (
               <div className="ms-Grid-col ms-sm6 ms-md3 ms-lg3">
-              <CompoundButton primary
-                rel="noopener noreferrer"
-                href={item.link}
-                target="_blank"
-                secondaryText={item.desc}
-              >
                 {item.name.toUpperCase()}
-              </CompoundButton>
-            </div>
-              
+              </div>
             );
           })}
       </div>

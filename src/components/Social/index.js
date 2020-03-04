@@ -1,5 +1,4 @@
 import React from "react";
-import { CompoundButton } from "office-ui-fabric-react";
 
 const Social = props => {
   return (
@@ -10,14 +9,7 @@ const Social = props => {
           props.data.values.map((item, index) => {
             return (
               <div className="ms-Grid-col ms-sm6 ms-md3 ms-lg3">
-                <CompoundButton primary
-                  rel="noopener noreferrer"
-                  href={item.elink}
-                  target="_blank"
-                  secondaryText=""
-                >
-                  {item.name.toUpperCase()}
-                </CompoundButton>
+                {item.name.toUpperCase()}
               </div>
             );
           })}

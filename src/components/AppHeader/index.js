@@ -1,9 +1,6 @@
 import React, { Component } from "react";
-import { initializeIcons } from "office-ui-fabric-react/lib/Icons";
-import { CommandBar } from "office-ui-fabric-react/lib/CommandBar";
 import ScrollspyNav from "react-scrollspy-nav";
 
-initializeIcons();
 export default class AppHeader extends Component {
   state = {
     showmod: {},
@@ -62,31 +59,6 @@ export default class AppHeader extends Component {
   render() {
     const menuList = this.getMenu(this.props.fabricMenu);
     const menuArr = this.getMenuArr(this.props.fabricMenu);
-    return (
-      <div className="header">
-        <ScrollspyNav scrollTargetIds={menuList} activeNavClass="is-active">
-          <CommandBar
-            items={[
-              {
-                key: "ganesan-karuppaiya",
-                name: "Ganesan Karuppaiya"
-              }
-            ]}
-            farItems={[
-              {
-                key: "newItem",
-                text: "",
-                iconProps: { iconName: "GlobalNavButton" },
-                split: true,
-                ariaLabel: "MENU",
-                subMenuProps: {
-                  items: this.props.fabricMenu
-                }
-              }
-            ]}
-          />
-        </ScrollspyNav>
-      </div>
-    );
+    return <div className="header" />;
   }
 }

@@ -1,6 +1,4 @@
 import React from "react";
-import { ProgressIndicator } from "office-ui-fabric-react/lib/ProgressIndicator";
-
 
 const Skills = props => {
   return (
@@ -9,15 +7,7 @@ const Skills = props => {
         {props.data &&
           props.data.values.length > 0 &&
           props.data.values.map((item, index) => {
-            return (
-              <div className="ms-Grid-col ms-sm12 ms-md6 ms-lg6">
-                <ProgressIndicator
-                  label={`${item.name} : ${item.percentage} `}
-                  description={` `}
-                  percentComplete={Number(item.percentage / 100)}
-                />
-              </div>
-            );
+            return <div className="ms-Grid-col ms-sm12 ms-md6 ms-lg6" />;
           })}
       </div>
     </div>
