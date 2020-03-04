@@ -1,8 +1,8 @@
-# [ReactJS & Bootstrap  CV Page ](https://github.com/ganesankar/cv-react-netlify-faunadb) 
+# [ReactJS Probe](https://github.com/ganesankar/cv-react-probe) 
 
-### [Netlify Deploy Link ](https://app.netlify.com/start/deploy?repository=https://github.com/ganesankar/cv-react-netlify-faunadb&stack=fauna) 
+### [Netlify Deploy Link ](https://app.netlify.com/start/deploy?repository=https://github.com/ganesankar/cv-react-probe) 
 
-ReactJS & Bootstrap CV Page is Nuxt.js example for running Netlify functions locally in a dev environment and as a generated static site deployed to Netlify [ReactJs](https://reactjs.org/), [Bootstrap](https://getbootstrap.com/) and [Netlify Functions](https://www.netlify.com/). 
+ReactJS & Bootstrap CV Page is Nuxt.js example for running Netlify functions locally in a dev environment and as a generated static site deployed to Netlify [ReactJs](https://reactjs.org/), [Bootstrap](https://getbootstrap.com/) . 
 This code can Be used as boilerplate for ReactJS & Bootstrap UI Development and as ready use Web based CV/ Resume Page.
 
 Using the Project is pretty simple but requires basic knowledge of Javascript, 
@@ -50,7 +50,6 @@ This Application uses a number of open source projects to work properly:
 * [Bootstrap](https://getbootstrap.com/) - great UI boilerplate for modern web apps
 * [Reactstrap](https://reactstrap.github.io/) - great UI boilerplate for modern web apps
 * [nodejs](https://nodejs.org/) - For Development Enviromnent and Netlify Functions Integrations
-* [Netlify](https://www.netlify.com/) - Cloud Computing Hosting, CI Pipeline, AWS's serverless Lambda functions 
 * [webpack](https://webpack.js.org/) - Module Bundler
 * [material icons](https://material.io/resources/icons/) - CSS based Icon toollit 
 * [hammerjs](https://hammerjs.github.io/) - A javascript library for multi-touch gestures
@@ -66,6 +65,6 @@ Application roadmap on enhancement
 
 ## Demo
 
- [Running App](https://ganesan-cv-reactjs.netlify.com/)
+ [Running App](https://ganesan-cv-probe.netlify.com/)
 
 
