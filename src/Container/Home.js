@@ -638,6 +638,7 @@ class Home extends Component {
 
   render() {
     const { posts } = this.props;
+    console.log(this.props);
     const {
       contentdata,
       options,
@@ -670,6 +671,7 @@ class Home extends Component {
     return (
 
       <div className="page-wrapper container-xl">
+        test
       {drawCharts && (
       <div className=" container-xl">
         <div className="row">

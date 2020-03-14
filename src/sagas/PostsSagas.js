@@ -12,6 +12,7 @@ export function* watchFetchPost() {
 }
 
 export function* watchFetchPosts() {
+	console.log('f1');
   yield takeEvery(types.FETCH_POSTS, workFetchPosts);
 }
 
