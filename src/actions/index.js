@@ -1,25 +1,36 @@
-import axios from 'axios';
+import _ from 'lodash';
+import jsonPlaceholder from '../apis/jsonPlaceholder';
 
-export const types = {
-  FETCH_POST: 'FETCH_POST',
-  FETCH_POST_SUCCESS: 'FETCH_POST_SUCCESS',
-  FETCH_POSTS: 'FETCH_POSTS',
-  FETCH_POSTS_SUCCESS: 'FETCH_POSTS_SUCCESS',
-  CREATE_POST: 'CREATE_POST',
-  CREATE_POST_SUCCESS: 'CREATE_POST_SUCCESS',
-  DELETE_POST: 'DELETE_POST',
-  DELETE_POST_SUCCESS: 'DELETE_POST_SUCCESS'
+export const fetchPostsAndUsers = () => async (dispatch, getState) => {
+  await dispatch(fetchPosts());
+  // const userIds = _.uniq(_.map(getState().posts, 'userId'));
+  // userIds.forEach(id => dispatch(fetchUser(id)));
+
+  _.chain(getState().posts).map('userId').uniq().forEach(id => dispatch(fetchUser(id))).value()
 };
 
-export const fetchPosts = () => ({ type: types.FETCH_POSTS });
-export const fetchPost = id => ({ type: types.FETCH_POST, id });
-export const createPost = (values, callback) => ({
-  type: types.CREATE_POST,
-  values,
-  callback
-});
-export const deletePost = (id, callback) => ({
-  type: types.DELETE_POST,
-  id,
-  callback
-});
+export const fetchPosts = () => async dispatch => {
+  const response = await jsonPlaceholder.get("/posts");
+  dispatch({
+    type: "FETCH_POSTS",
+    payload: response.data
+  });
+};
+
+// export const fetchUser = id => dispatch => _fetchUser(id, dispatch);
+
+// const _fetchUser = _.memoize(async(id, dispatch) => {
+//   const response = await jsonPlaceholder.get(`/users/${id}`);
+//   dispatch({
+//     type: 'FETCH_USER',
+//     payload: response.data
+//   });
+// });
+
+export const fetchUser = id => async dispatch => {
+  const response = await jsonPlaceholder.get(`/users/${id}`);
+  dispatch({
+    type: 'FETCH_USER',
+    payload: response.data
+  });
+}

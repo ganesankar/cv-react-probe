@@ -1,70 +1,68 @@
-# [ReactJS Probe](https://github.com/ganesankar/cv-react-probe) 
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-### [Netlify Deploy Link ](https://app.netlify.com/start/deploy?repository=https://github.com/ganesankar/cv-react-probe) 
+## Available Scripts
 
-ReactJS & Bootstrap CV Page is Nuxt.js example for running Netlify functions locally in a dev environment and as a generated static site deployed to Netlify [ReactJs](https://reactjs.org/), [Bootstrap](https://getbootstrap.com/) . 
-This code can Be used as boilerplate for ReactJS & Bootstrap UI Development and as ready use Web based CV/ Resume Page.
+In the project directory, you can run:
 
-Using the Project is pretty simple but requires basic knowledge of Javascript, 
+### `npm start`
 
-## Getting Started
-- Install Nodejs from [Nodejs Official Page](https://nodejs.org/en/)
-- Open your terminal
-- Navigate to the project
-- Run `npm install` or `yarn install` if you use [Yarn](https://yarnpkg.com/en/)
-- Sign up for a FaunaDB account [FaunaDB](https://dashboard.fauna.com/accounts/register)
-- Create a database in the Fauna Cloud Console
-    - Click “New Database”
-    - Enter “Database Name” and Save
-    - Copy the database access key’s secret
-    - **Save the secret somewhere safe; you won’t get a second chance to see it!**
-- Set your database access secret in your terminal environment 
-  - For Mac or Linux `export FAUNADB_SERVER_SECRET=YourFaunaDBSecretHere`
-  - For Windows `set  FAUNADB_SERVER_SECRET=YourFaunaDBSecretHere`
-- Bootstrap your FaunaDB collection and indexes `npm run bootstrap` 
-- Run `npm run start`to start a local development server
-- Navigate to `http://localhost:3000` or - A new tab will be opened in your browser
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-You can also run additional npm tasks such as
-- `npm build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build
+The page will reload if you make edits.<br />
+You will also see any lint errors in the console.
 
-## Prerequisites
+### `npm test`
 
-You must have Node.js and npm installed on your machine. This project was built against the following versions:
+Launches the test runner in the interactive watch mode.<br />
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-- Node v12.6.0
-- npm v6.9.0
+### `npm run build`
 
+Builds the app for production to the `build` folder.<br />
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-## Features!
+The build is minified and the filenames include the hashes.<br />
+Your app is ready to be deployed!
 
-  - SPA based on Counter Component Developemnt 
-  -  
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+### `npm run eject`
 
-## Tech
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-This Application uses a number of open source projects to work properly:
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-* [ReactJs](https://reactjs.org/) - HTML enhanced for web apps!
-* [Bootstrap](https://getbootstrap.com/) - great UI boilerplate for modern web apps
-* [Reactstrap](https://reactstrap.github.io/) - great UI boilerplate for modern web apps
-* [nodejs](https://nodejs.org/) - For Development Enviromnent and Netlify Functions Integrations
-* [webpack](https://webpack.js.org/) - Module Bundler
-* [material icons](https://material.io/resources/icons/) - CSS based Icon toollit 
-* [hammerjs](https://hammerjs.github.io/) - A javascript library for multi-touch gestures
-* [lodash](https://hammerjs.github.io/) - A javascript  library which provides utility functions for common programming tasks using the functional programming paradigm
-* [luxon](https://moment.github.io/luxon) - A library for working with dates and times
+Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Todo
-Application roadmap on enhancement
-  - New Pages using Nuxt management 
-  - State Managment Integration
+## Learn More
 
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-## Demo
+To learn React, check out the [React documentation](https://reactjs.org/).
 
- [Running App](https://ganesan-cv-probe.netlify.com/)
+### Code Splitting
 
+This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
+### Analyzing the Bundle Size
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+
+### Making a Progressive Web App
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+
+### Advanced Configuration
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+
+### Deployment
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+
+### `npm run build` fails to minify
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
