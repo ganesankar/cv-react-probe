@@ -9,7 +9,7 @@ import Login from "./Login";
 import { connect } from "react-redux";
 import { getPosts, deleteItem } from "../actions/post";
 
-class Posts extends Component {
+class Highchart extends Component {
   state = {
     posts: []
   };
@@ -69,4 +69,4 @@ const mapStateToProps = state => ({
   auth: state.auth.isAuthenticated
 });
 
-export default connect(mapStateToProps, { getPosts, deleteItem })(Posts);
+export default connect(mapStateToProps, { getPosts, deleteItem })(Highchart);

@@ -3,7 +3,7 @@ import * as uuid from "uuid";
 
 // Get Posts
 export const getPosts = () => dispatch => {
-  fetch("https://jsonplaceholder.typicode.com/posts")
+  fetch("https://ganesan-cv-reactjs.netlify.com/.netlify/functions/cv-all")
     .then(res => res.json())
     .then(data =>
       dispatch({
